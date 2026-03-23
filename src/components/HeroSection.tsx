@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImg from "@/assets/hero-smile.jpg";
+import treatmentImg from "@/assets/gallery/treatment-procedure.jpg";
+import receptionImg from "@/assets/gallery/reception-desk.jpg";
+import treatmentRoomImg from "@/assets/gallery/treatment-room.jpg";
 
 const HeroSection = () => {
   return (
@@ -74,14 +76,35 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
+            {/* Main hero image */}
             <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-              <img src={heroImg} alt="Smile 365 Star Dental Clinic - Beautiful Smiles" className="w-full h-[500px] object-cover" />
+              <img src={treatmentImg} alt="Expert dental treatment at Smile 365 Star" className="w-full h-[500px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 to-transparent" />
             </div>
+
+            {/* Floating thumbnails */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="absolute -bottom-6 -left-4 rounded-2xl overflow-hidden shadow-elevated border-4 border-card w-28 h-28 hidden md:block"
+            >
+              <img src={receptionImg} alt="Welcoming reception" className="w-full h-full object-cover" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="absolute -top-4 -right-4 rounded-2xl overflow-hidden shadow-elevated border-4 border-card w-28 h-28 hidden md:block"
+            >
+              <img src={treatmentRoomImg} alt="Modern treatment room" className="w-full h-full object-cover" />
+            </motion.div>
+
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-elevated"
+              className="absolute bottom-8 right-4 bg-card rounded-2xl p-4 shadow-elevated"
             >
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
