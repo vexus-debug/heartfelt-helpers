@@ -217,7 +217,7 @@ const AboutPage = () => {
           >
             <img src={waitingArea} alt="Our waiting area" className="rounded-xl w-full h-48 md:h-64 object-cover col-span-2 md:col-span-1" />
             <img src={treatmentRoom} alt="Treatment room" className="rounded-xl w-full h-48 md:h-64 object-cover" />
-            <img src={clinicImg} alt="Clinic interior" className="rounded-xl w-full h-48 md:h-64 object-cover" />
+            <img src={loungeArea} alt="Clinic interior" className="rounded-xl w-full h-48 md:h-64 object-cover" />
           </motion.div>
         </div>
       </section>
